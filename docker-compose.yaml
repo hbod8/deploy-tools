@@ -8,41 +8,50 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    restart: always
     volumes:
       - "./content:/var/www"
       - "./nginx.conf:/etc/nginx/nginx.conf"
       - "./certs:/etc/nginx/certs"
-    restart: always
-  search:
-    image: opensearchproject/opensearch
+  dashboard:
+    build: ./simplestats-ui
     networks:
       - localnet
-    expose:
-      - "9200"
-      - "9600"
+      - widenet
+    ports:
+      - "80:80"
+    restart: always
+  api:
+    build: ./simplestats-api
+    environment:
+      - DB_USERNAME=harry
+      - DB_PASSWORD=secret
+      - DB_HOSTNAME=db
+      - DB_PORT=27017
+      - DB_NAME=harry
+      - JWT_SECRET=secret
+      - PORT=8080
+      - SCRIPT_CALLBACK_URL=http://localhost:8080/data
+    networks:
+      - localnet
+      - widenet
+    ports:
+      - "8080:8080"
+    restart: always
+  db:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=harry
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+      - MONGO_INITDB_DATABASE=harry
+    image: mongo
+    networks:
+      - localnet
+    ports:
+      - "27107:27107"
     volumes:
-      - "./search-data:/usr/share/opensearch/data"
-    environment:
-      - cluster.name=search-cluster
-      - node.name=search
-      - bootstrap.memory_lock=true
-      - "OPENSEARCH_JAVA_OPTS=-Xms256m -Xmx256m"
-      - "DISABLE_INSTALL_DEMO_CONFIG=true"
-      - "DISABLE_SECURITY_PLUGIN=true"
-      - "discovery.type=single-node"
-    restart: always
-  search-dashboard:
-    image: opensearchproject/opensearch-dashboards
-    networks:
-      - localnet
-    expose:
-      - "5601"
-    environment:
-      - 'OPENSEARCH_HOSTS=["http://search:9200"]'
-      - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true"
-    restart: always
+      - "./db:/data/db"
 networks:
-  widenet:
-    driver: bridge
   localnet:
+    driver: bridge
+  widenet:
     driver: bridge
