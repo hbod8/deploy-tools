@@ -1,7 +1,7 @@
 version: "3"
 services:
   static-host:
-    image: nginx
+    build: ./static-host
     networks:
       - widenet
       - localnet
@@ -9,12 +9,8 @@ services:
       - "80:80"
       - "443:443"
     restart: always
-    volumes:
-      - "./content:/var/www"
-      - "./nginx.conf:/etc/nginx/nginx.conf"
-      - "./certs:/etc/nginx/certs"
   api:
-    build: ./simplestats-api
+    build: ./api
     environment:
       - DB_USERNAME=harry
       - DB_PASSWORD=secret

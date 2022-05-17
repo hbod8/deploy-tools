@@ -1,0 +1,14 @@
+.wrapper {
+  min-width: 100vw;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.holder {
+  max-width: 500px;
+  min-width: 300px;
+}
+.holder>* {
+  margin: .5em 0 .5em 0;
+}

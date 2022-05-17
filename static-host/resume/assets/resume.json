@@ -1,0 +1,154 @@
+{
+  "_required": "user.firstName, user.lastName, ",
+  "user": {
+    "firstName": "Harry",
+    "lastName" : "Saliba",
+    "photo": "assets/portrait.jpg",
+    "phoneNumber": "(206) 963 9898",
+    "email": "harry@harry.technology",
+    "about": "My name is Harry Saliba, I am a Software Developer with a focus on cloud based user applications. I am originally from Boston, MA, but spent the majority of my life in Seattle and Bellingham, WA.",
+    "linkedin": "https://www.linkedin.com/in/harry-saliba/",
+    "twitter": "https://twitter.com/harrysaliba4139",
+    "github": "https://github.com/hbod8",
+    "instagram": "https://www.instagram.com/salibaharry/"
+  },
+  "sections": [
+    {
+      "title": "Experience",
+      "blocks": [
+        {
+          "title": "Full Stack Developer",
+          "organization": "Huurb LLC",
+          "date": "2018 - 2020",
+          "description": "Lead technology developer in charge of developing an application stack for processing requests, users and business data."
+        },
+        {
+          "title": "Computer Science Tutor",
+          "organization": "Western Washington University",
+          "date": "Spring 2021",
+          "description": "Assisted students in completing assignments and understanding computer science topics."
+        },
+        {
+          "title": "Lead Sailing Instructor",
+          "organization": "Bellingham Community Boating Center",
+          "date": "Summer 2020 - Fall 2021",
+          "description": "Created curriculum and lead lessons on multiple sailboats and for all ages."
+        },
+        {
+          "title": "Sailing Instructor",
+          "organization": "Western Washington University",
+          "date": "Summer 2019",
+          "description": "Taught group and private lessons to all ages."
+        },
+        {
+          "title": "Lead Sailing Instructor",
+          "organization": "Bainbridge Island Parks & Rec",
+          "date": "Summer 2016 - Summer 2018",
+          "description": "Organized, ran, and lead group lessons for ages 8 - 18."
+        },
+        {
+          "title": "Assistant Sailing Instructor",
+          "organization": "Arey's Pond Boat Yard",
+          "date": "Summer 2015",
+          "description": "Taught group and private lessons on classic wooden boats. Answered phone class and scheduled lessons and charters."
+        }
+      ]
+    },
+    {
+      "title": "Education",
+      "blocks": [
+        {
+          "title": "Computer Science BA",
+          "organization": "Western Washington University",
+          "date": "2021",
+          "description": "Beyond required coursework, completed multiple courses in web design, and mathematics."
+        },
+        {
+          "title": "High School",
+          "organization": "Bainbridge High School",
+          "date": "2017",
+          "description": "Completed AP Computer Science."
+        }
+      ]
+    },
+    {
+      "title": "Certifications",
+      "blocks": [
+        {
+          "title": "US Sailing Small Boat Instructor Level 1",
+          "organization": "US Sailing",
+          "date": "Iss. May 2016 - Exp. May 2022",
+          "description": "Core instruction concepts such as preparing curriculum, giving presentations, and understanding student comprehension."
+        }
+      ]
+    },
+    {
+      "title": "References",
+      "blocks": [
+        {
+          "title": "Erik Fretheim, PhD",
+          "organization": "Western Washington University",
+          "description": "Erik.Fretheim@wwu.edu - Senior project advisor & Director of Cybersecurity Program"
+        },
+        {
+          "title": "Bryan Rust",
+          "organization": "Community Boating Center",
+          "description": "bryan@boatingcenter.org - Executive Director"
+        },
+        {
+          "title": "Nater Youngchild",
+          "organization": "Huurb LLC",
+          "description": "nater@huurb.com - CEO"
+        }
+      ]
+    },
+    {
+      "title": "Leadership",
+      "blocks": [
+        {
+          "title": "Team Captain",
+          "organization": "WWU Sailing",
+          "date": "2020 - 2021",
+          "description": "Ran meetings, communicated with the university, managed a budget, and created instruction materials during the pandemic."
+        },
+        {
+          "title": "Club President",
+          "organization": "WWU Motorcycle Club",
+          "date": "2020 - 2021",
+          "description": "Organized group rides, recruited new members, and ran the facebook page."
+        },
+        {
+          "title": "Team Captain",
+          "organization": "Bainbridge High School Sailing",
+          "date": "2016 - 2017",
+          "description": "Scheduled practice, represented the team in the district, recruited new members, and sat in on budget committee."
+        }
+      ]
+    },
+    {
+      "title": "Skills",
+      "list": [
+        "Azure, AWS",
+        "Docker, Kubernetes",
+        "SQL, PostgreSQL, MongoDB",
+        "C, C++, C#, .NET",
+        "Java",
+        "JavaScript, TypeScript, Angular.io, Node.js",
+        "Scheme, Lisp, Haskell",
+        "HTML, CSS, PHP, LAMP Stack"
+      ]
+    }
+  ],
+  "interests": [
+    {
+      "image": "assets/buoy.jpg",
+      "imageAlt": "Water Weather Station Buoy",
+      "caption": "My senior project was creating a connected device called a Water Weather Station that allows students to crowd source weather data."
+    },
+    {
+      "image": "assets/team.jpg",
+      "imageAlt": "Sailing team at the Stanford Sailing Center",
+      "caption": "As a junior on the WWU Sailing Team I attened an invitational regatta at Stanford. We compeated in a form of racing called Team Racing in which groups of 3 boats work together to win races."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+/*
+
+colors:
+blue/green: #34d9c3
+yellow: #fff100
+red: #ff5824
+purple: #8c84d6
+silt: #a2d683
+
+*/
+body {
+    background-color: #34d9c3 !important;
+    margin: 0px 0px 0px 0px;
+}
+.text {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+/*
+Bootstrap override
+*/
+.nav {
+    background-color: #fff100;
+}
+.nav-link.active {
+    background-color: #ff5824 !important;
+    border-radius: 0px !important;
+}
+
+.header-logo {
+    height: inherit;
+}
+
+#c1 {
+    background-color: #34d9c3
+}
+
+#c2 {
+    background-color: #fff100
+}
+
+#c3 {
+    background-color: #ff5824
+}
+
+#c4 {
+    background-color: #8c84d6
+}
