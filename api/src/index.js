@@ -28,10 +28,10 @@ const secureServer = https.createServer({
 
 const server = http.createServer(app)
 
-secureServer.listen(process.env.PORT, () => {
+secureServer.listen(process.env.HTTPS_PORT, () => {
   console.log(`HTTPS Listening on port ${process.env.HTTPS_PORT}`)
 })
 
-server.listen(process.env.PORT, () => {
+server.listen(process.env.HTTP_PORT, () => {
   console.log(`HTTP Listening on port ${process.env.HTTP_PORT}`)
 })
