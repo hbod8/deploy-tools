@@ -4,6 +4,8 @@ import DataRoutes from "./data.js"
 import ScriptRoutes from "./scripts.js"
 import express from "express"
 import morgan from "morgan"
+import https from "https"
+import fs from "fs"
 
 const app = express()
 
@@ -15,6 +17,11 @@ app.use("/data", DataRoutes)
 app.use("/user", UserRoutes)
 app.use("/scripts", ScriptRoutes)
 
-app.listen(process.env.PORT, () => {
+const server = https.createServer({
+  key: fs.readFileSync('../certs/privkey.pem'),
+  cert: fs.readFileSync('../certs/fullchain.pem')
+}, app)
+
+server.listen(process.env.PORT, () => {
   console.log(`Listening on port ${process.env.PORT}`)
 })
