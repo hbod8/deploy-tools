@@ -7,6 +7,7 @@ import morgan from "morgan"
 import https from "https"
 import fs from "fs"
 import path from "path"
+import { dirname } from "path"
 
 const app = express()
 

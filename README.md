@@ -10,4 +10,5 @@ Run the `docker-compose up` to bring up the docker stack.
 
 - Docker
 - Docker Compose
-- SSL Certificates in 'static-host/certs'
+- SSL Certificates for static websites in 'static-host/certs'
+- SSL Certificates for api in 'api/certs'
