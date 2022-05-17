@@ -10,12 +10,14 @@ import fs from "fs"
 import path from "path"
 import { dirname } from "path"
 import { fileURLToPath } from 'url'
+import cors from 'cors';
 
 const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(morgan('tiny'))
+app.use(cors())
 
 app.use("/data", DataRoutes)
 app.use("/user", UserRoutes)
