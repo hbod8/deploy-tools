@@ -21,7 +21,7 @@ app.use("/user", UserRoutes)
 app.use("/scripts", ScriptRoutes)
 
 const server = https.createServer({
-  key: fs.readFileSync(path.join(dirname(fileURLToPath(import.meta.url)), "..", "../certs/privkey.pem")),
+  key: fs.readFileSync(path.join(dirname(fileURLToPath(import.meta.url)), "..", "certs/privkey.pem")),
   cert: fs.readFileSync(path.join(dirname(fileURLToPath(import.meta.url)), "..", "certs/fullchain.pem"))
 }, app)
 
