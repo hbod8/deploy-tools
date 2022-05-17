@@ -1,8 +1,8 @@
 import Router from "express"
 import { data } from "./db.js"
 import { ObjectId } from "mongodb"
-import { ErrorMessages } from "./utils.js"
-import { authorize } from "./auth.js"
+import { ErrorMessages } from "./models/ErrorMessages.js"
+import { authorize } from "./Auth.js"
 
 const DataRoutes = Router()
 

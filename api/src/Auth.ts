@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken"
 import { users } from "./db.js"
 import * as crypto from "crypto"
-import { ErrorMessages } from "./utils.js"
+import { ErrorMessages } from "./models/ErrorMessages.js"
 import { ObjectId } from "mongodb"
 import { Request, Response } from "express"
 

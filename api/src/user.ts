@@ -1,8 +1,8 @@
 import Router from "express"
-import { ErrorMessages } from "./utils.js"
+import { ErrorMessages } from "./models/ErrorMessages.js"
 import { users } from "./db.js"
 import * as crypto from "crypto"
-import { authorize, authenticate, refresh } from "./auth.js"
+import { authorize, authenticate, refresh } from "./Auth.js"
 
 const UserRoutes = Router()
 

@@ -3,7 +3,7 @@ import { dirname } from "path"
 import { fileURLToPath } from 'url'
 import fs from "fs"
 import { data } from "./db.js"
-import { ErrorMessages } from "./utils.js"
+import { ErrorMessages } from "./models/ErrorMessages.js"
 
 const ScriptRoutes = Router()
 
