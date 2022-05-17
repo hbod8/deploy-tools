@@ -6,6 +6,7 @@ import express from "express"
 import morgan from "morgan"
 import https from "https"
 import fs from "fs"
+import path from "path"
 
 const app = express()
 
@@ -18,8 +19,8 @@ app.use("/user", UserRoutes)
 app.use("/scripts", ScriptRoutes)
 
 const server = https.createServer({
-  key: fs.readFileSync('../certs/privkey.pem'),
-  cert: fs.readFileSync('../certs/fullchain.pem')
+  key: fs.readFileSync(path.join(dirname(fileURLToPath(import.meta.url)), "..", "../certs/privkey.pem")),
+  cert: fs.readFileSync(path.join(dirname(fileURLToPath(import.meta.url)), "..", "certs/fullchain.pem"))
 }, app)
 
 server.listen(process.env.PORT, () => {
