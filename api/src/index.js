@@ -20,11 +20,17 @@ app.use("/data", DataRoutes)
 app.use("/user", UserRoutes)
 app.use("/scripts", ScriptRoutes)
 
-const server = https.createServer({
+const secureServer = https.createServer({
   key: fs.readFileSync(path.join(dirname(fileURLToPath(import.meta.url)), "..", "certs/privkey.pem")),
   cert: fs.readFileSync(path.join(dirname(fileURLToPath(import.meta.url)), "..", "certs/fullchain.pem"))
 }, app)
 
+const server = http.createServer(app)
+
+secureServer.listen(process.env.PORT, () => {
+  console.log(`HTTPS Listening on port ${process.env.HTTPS_PORT}`)
+})
+
 server.listen(process.env.PORT, () => {
-  console.log(`Listening on port ${process.env.PORT}`)
+  console.log(`HTTP Listening on port ${process.env.HTTP_PORT}`)
 })
