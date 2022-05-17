@@ -2,9 +2,6 @@ version: "3"
 services:
   static-host:
     build: ./static-host
-    networks:
-      - widenet
-      - localnet
     ports:
       - "80:80"
       - "443:443"
@@ -21,11 +18,9 @@ services:
       - HTTPS_PORT=8080
       - HTTP_PORT=8081
       - SCRIPT_CALLBACK_URL=http://localhost:8080/data
-    networks:
-      - localnet
-      - widenet
     ports:
       - "8080:8080"
+      - "8081:8081"
     restart: always
   db:
     environment:
@@ -33,8 +28,6 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=secret
       - MONGO_INITDB_DATABASE=harry
     image: mongo
-    networks:
-      - localnet
     ports:
       - "27107:27107"
     volumes:
