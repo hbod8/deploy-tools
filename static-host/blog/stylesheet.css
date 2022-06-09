@@ -88,6 +88,8 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 nav a {
   text-decoration: none;
