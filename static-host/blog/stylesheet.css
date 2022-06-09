@@ -1,3 +1,11 @@
+/* 
+
+  Style Sheet for Personal Website
+
+  Harry Saliba 2022
+
+*/
+
 @font-face {
   font-family: "Jost";
   src: url("jost.ttf");
@@ -11,9 +19,14 @@ html {
 body {
   max-width: 40rem;
   margin: 0;
+  float: left;
 }
 h1,h1,h3,h4,h5,h6 {
   font-weight: 600;
+}
+h1,h1,h3,h4,h5,h6,p,caption {
+  margin-top: .666em;
+  margin-bottom: .666em;
 }
 h1 {
   font-size: 4rem;
@@ -37,26 +50,72 @@ p {
   font-size: 1rem;
   font-weight: 300;
 }
+a {
+  color: black;
+}
+small {
+  font-size: .666666rem;
+  font-weight: 400;
+}
+strong {
+  font-weight: 600;
+}
+abbr {
+  text-decoration: none;
+  cursor: pointer;
+}
 section p {
   max-width: 40rem;
+  min-width: 30rem;
 }
 header {
   display: flex;
   justify-content: center;
 }
-
-/* Smallest styles */
-@media screen and (max-width: 200mm) {
-  html {
-    font-size: 4mm;
-  }
+main img {
+  max-width: 40rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
-
-/* Smaller styles */
-@media screen and (max-width: 240mm) {
-  html {
-    font-size: 5mm;
-  }
+.title-text {
+  background-clip: text;
+  color: transparent;
+  background-image: url("https://hsaliba-photo.us-southeast-1.linodeobjects.com/imported/01-04-22/converted/DSC03817.jpg");
+  background-position: center;
+  background-size: cover;
+}
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1rem;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+}
+nav a:hover {
+  text-decoration: underline;
+  color: black;
+}
+nav p, nav h1, nav h2, nav h3, nav h4, nav h5, nav h6 {
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+}
+nav>a>div {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+nav>a>div>img {
+  max-width: 6rem;
+  justify-self: center;
+  align-self: center;
+}
+footer {
+  display: flex;
+  justify-content: center;
+}
+footer p {
+  font-size: .6666rem;
 }
 
 /* Larger styles */
@@ -70,5 +129,40 @@ header {
 @media screen and (min-width: 320mm) {
   html {
     font-size: 8mm;
+  }
+}
+
+/* Smaller styles */
+@media screen and (max-width: 240mm) {
+  html {
+    font-size: 5mm;
+  }
+  nav {
+    grid-template-columns: 1fr;
+    gap: 0 0;
+  }
+  nav>a>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  nav>a>div>img {
+    max-width: 18rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Smallest styles */
+@media screen and (max-width: 200mm) {
+  html {
+    font-size: 4mm;
+  }
+  body {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  nav {
+    grid-template-columns: 1fr;
+    gap: 0 0;
   }
 }
