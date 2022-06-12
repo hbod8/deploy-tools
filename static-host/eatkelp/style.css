@@ -1,7 +1,40 @@
+html {
+  font-family: "Jost", sans-serif;
+  font-size: 6mm;
+}
 body {
   background-color: #062e62;
   color: antiquewhite;
   font-family: 'Yaldevi', Arial, Helvetica, sans-serif;
+}
+h1,h1,h3,h4,h5,h6 {
+  font-weight: 600;
+}
+h1,h1,h3,h4,h5,h6,p,caption {
+  margin-top: .666em;
+  margin-bottom: .666em;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.3333rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: .666666rem;
+}
+p, li, a {
+  font-size: 1rem;
+  font-weight: 300;
 }
 .title-card {
   width: 100vw;
@@ -16,73 +49,17 @@ body {
 .title {
   text-shadow: black 0px 0px 5px;
 }
+.description {
+  max-width: 40rem;
+}
 main {
   background-color: #062e62;
-}
-.reef {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
   width: 100vw;
-  max-height: 800px;
-  height: 70vh;
-  position: absolute;
-  top: 30vh;
-  left: 0;
-  overflow: hidden;
 }
-.reef>* {
-  height: 100%;
-  min-width: 180px;
-  width: 19vw;
-  /* max-width: 250px; */
-  transform: scale(x, y);
-}
-.description {
-  width: 100vw;
+.founders {
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-.description>*:nth-child(even) {
-  justify-self: left;
-}
-/* .description>*:nth-child(odd) {
-  justify-self: right;
-} */
-.description>* {
-  justify-self: right;
-  max-width: 500px;
-  margin: 1em 1em 1em 1em;
-  align-self: center;
-  min-height: 200px;
-}
-.description h2 {
-  font-size: 5rem;
-}
-.description p {
-  font-size: 2rem;
-}
-
-/* shimmer */
-
-.shine {
-  background: #f6f7f8;
-  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
-  background-repeat: no-repeat;
-  background-size: 800px 104px; 
-  display: inline-block;
-  position: relative; 
-  
-  -webkit-animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards; 
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-name: placeholderShimmer;
-  -webkit-animation-timing-function: linear;
-}
-
-@-webkit-keyframes placeholderShimmer {
-  0% {
-    background-position: -468px 0;
-  }
-  
-  100% {
-    background-position: 468px 0; 
-  }
 }
