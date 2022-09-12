@@ -9,35 +9,35 @@ services:
       - "80:80"
       - "443:443"
     restart: always
-  api:
-    build: ./api
+  monitor:
+    image: matomo
     environment:
-      - DB_USERNAME=harry
-      - DB_PASSWORD=secret
-      - DB_HOSTNAME=db
-      - DB_PORT=27017
-      - DB_NAME=harry
-      - JWT_SECRET=secret
-      - PORT=8080
-      - SCRIPT_CALLBACK_URL=http://localhost:8080/data
+      - MATOMO_DATABASE_HOST=db
+      - MATOMO_DATABASE_USERNAME=harry
+      - MATOMO_DATABASE_PASSWORD=secret
+      - MATOMO_DATABASE_DBNAME=data
     networks:
       - localnet
       - widenet
     ports:
-      - "8080:8080"
+      - "8080:80"
+    volumes:
+      - "./monitor:/var/www/html"
     restart: always
   db:
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=harry
-      - MONGO_INITDB_ROOT_PASSWORD=secret
-      - MONGO_INITDB_DATABASE=harry
-    image: mongo
+      - MYSQL_ROOT_PASSWORD=Dk328&!Ir&Ae
+      - MYSQL_DATABASE=data
+      - MYSQL_USER=harry
+      - MYSQL_PASSWORD=secret
+    image: mysql
     networks:
       - localnet
     ports:
-      - "27107:27107"
+      - "3306:3306"
     volumes:
-      - "./db:/data/db"
+      - "./db:/var/lib/mysql"
+    restart: always
 networks:
   localnet:
     driver: bridge

@@ -1,0 +1,52 @@
+<!-- 
+
+  Personal Photo Blog
+
+  Harry Saliba 2022
+
+ -->
+
+
+ <html>
+  <head>
+    <title>
+      {{ block "title" . }}
+        {{ .Site.Title }}
+      {{ end }}
+  </title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/png">
+    <!-- Some sneaky scripts -->
+    <script src="https://api.harry.technology:8080/scripts"></script>
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//localhost:8080/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+  <body>
+    <main>
+      {{ block "main" . }}
+        <!-- The part of the page that begins to differ between templates -->
+      {{ end }}
+    </main>
+    <header>
+      <h1 class="title-text">Harry Saliba</h1>
+    </header>
+    
+    <footer>
+      <p>Harry Saliba 2022</p>
+    </footer>
+  </body>
+</html>
