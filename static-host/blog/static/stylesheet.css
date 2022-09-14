@@ -80,7 +80,7 @@ main img {
 .title-text {
   background-clip: text;
   color: transparent;
-  background-image: url("https://hsaliba-photo.us-southeast-1.linodeobjects.com/imported/2022-01-04/converted/DSC03817.jpg");
+  background-image: url("title-bg.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -121,10 +121,23 @@ nav>a>div>img {
 }
 footer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
-footer p {
+footer p, footer a {
   font-size: .6666rem;
+}
+a small {
+  text-decoration: none;
+  color: black;
+}
+.pagenav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.pagenav>div {
+  display: flex;
+  justify-content: center;
 }
 
 /* Larger styles */
