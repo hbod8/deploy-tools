@@ -1,8 +1,8 @@
 FROM ubuntu AS blog_build
-WORKDIR /hugo
-COPY ./blog ./
 RUN apt update
 RUN apt install -y hugo
+WORKDIR /hugo
+COPY ./blog ./
 RUN hugo
 
 FROM nginx
