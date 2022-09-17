@@ -10,7 +10,7 @@ services:
       - "443:443"
     restart: always
   monitor:
-    image: matomo
+    build: ./matomo
     environment:
       - MATOMO_DATABASE_HOST=db
       - MATOMO_DATABASE_USERNAME=harry
