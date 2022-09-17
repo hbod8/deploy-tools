@@ -1,0 +1,5 @@
+((\s|\S)+<main>|<\/main>(\s|\S)+|<(\/){0,1}p>|(<(\/){0,1}p>|<(\/){0,1}ul>|<(\/){0,1}h[1-6]>)|^ *)
+(<li>)(.*)(<\/li>) - $2
+(?<!\n)\n(?!\n| - ) \n\n
+(<img src="https:\/\/hsaliba-photo.us-southeast-1.linodeobjects.com\/imported\/)(.*)(" alt=")(.*)(" class="exif">) {{< hostedimage src=\"$2\" alt=\"$4\" >}}")
+(<a href=")(.*)(">)(.*)(<\/a>) [\4](\2)
