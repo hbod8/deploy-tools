@@ -1,7 +1,7 @@
 ---
 title: ""
 publishdate: {{ .Date }}
-date: {{ .Date }}
+date: {{ .Name }}
 previewimage: ""
 draft: true
 ---

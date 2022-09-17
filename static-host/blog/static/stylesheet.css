@@ -139,6 +139,15 @@ a small {
   display: flex;
   justify-content: center;
 }
+code {
+  display: block;
+  overflow-wrap: break-word;
+  padding: 1rem;
+  font-size: .75rem;
+  border-radius: .5rem;
+  background-color: lightgray;
+  white-space: pre-line;
+}
 
 /* Larger styles */
 @media screen and (min-width: 280mm) {
