@@ -20,22 +20,9 @@
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/exifr"></script>
     <script src="{{ .Site.BaseURL }}/script.js" defer></script>
-    <!-- Matomo -->
-    <script>
-      var _paq = window._paq = window._paq || [];
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-      _paq.push(["setCookieDomain", "*.harry.technology"]);
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="//harry.technology:8080/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '1']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    <!-- End Matomo Code -->
+    <!-- Start Tarcking Code -->
+    <script async defer data-website-id="099bc9d2-a51b-47cf-adf3-6b0d2f3199b2" src="http://harry.technology:3000/umami.js"></script>
+    <!-- End Tracking Code -->
   </head>
   <body>
     <main>
