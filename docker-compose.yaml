@@ -2,44 +2,28 @@ version: "3"
 services:
   static-host:
     build: ./static-host
-    networks:
-      - widenet
-      - localnet
     ports:
       - "80:80"
       - "443:443"
     restart: always
   monitor:
-    build: ./matomo
+    image: docker.umami.dev/umami-software/umami:mysql-latest
     environment:
-      - MATOMO_DATABASE_HOST=db
-      - MATOMO_DATABASE_USERNAME=harry
-      - MATOMO_DATABASE_PASSWORD=secret
-      - MATOMO_DATABASE_DBNAME=data
-    networks:
-      - localnet
-      - widenet
+      - DATABASE_URL=mysql://harry:secret@db:3306/web_data
     ports:
-      - "8080:80"
+      - "127.0.0.1:3000:3000"
     volumes:
       - "./monitor:/var/www/html"
     restart: always
   db:
     environment:
       - MYSQL_ROOT_PASSWORD=Dk328&!Ir&Ae
-      - MYSQL_DATABASE=data
+      - MYSQL_DATABASE=web_data
       - MYSQL_USER=harry
       - MYSQL_PASSWORD=secret
     image: mysql
-    networks:
-      - localnet
     ports:
       - "3306:3306"
     volumes:
       - "./db:/var/lib/mysql"
     restart: always
-networks:
-  localnet:
-    driver: bridge
-  widenet:
-    driver: bridge
