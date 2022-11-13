@@ -11,7 +11,7 @@ services:
     environment:
       - DATABASE_URL=mysql://harry:secret@db:3306/web_data
     ports:
-      - "127.0.0.1:3000:3000"
+      - "3000:3000"
     volumes:
       - "./monitor:/var/www/html"
     restart: always
