@@ -4,7 +4,7 @@ services:
     build: ./static-host
     ports:
       - "80:80"
-      - "127.0.0.1:443:443"
+      - "443:443"
     restart: always
   monitor:
     image: docker.umami.dev/umami-software/umami:mysql-latest
