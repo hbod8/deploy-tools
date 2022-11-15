@@ -4,3 +4,4 @@ build
 simplestats-*
 db
 monitor
+http-cache
