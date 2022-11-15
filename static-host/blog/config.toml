@@ -2,4 +2,4 @@ baseURL = 'https://harry.technology/'
 languageCode = 'en-us'
 title = 'Harry Sailba'
 [Params]
-  imagehost = 'https://hsaliba-photo.us-southeast-1.linodeobjects.com/imported/'
+  imagehost = 'https://harry.technology/photos/imported/'
