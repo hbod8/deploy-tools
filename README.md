@@ -1,13 +1,12 @@
-# Orleans config
+# Deploy Tools
 
 This repo has all the goodies.
 
-Run the `docker-compose build` to build.
-
-Run the `docker-compose up` to bring up the docker stack.
+Run `sudo sh deploy.sh` at regular intervals to update and deploy.
 
 ## Requirements
 
 - Docker
 - Docker Compose
-- SSL Certificates in 'static-host/certs'
+- Certbot
+- Git

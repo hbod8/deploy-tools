@@ -1,30 +1,35 @@
 #!/bin/bash
-
-# clone repos
-git clone git@github.com:hbod8/simplestats-api.git
-git clone git@github.com:hbod8/simplestats-ui.git
-git clone git@github.com:hbod8/angular-resume.git
-git clone git@github.com:hbod8/prestorecording.com.git
-git clone git@github.com:hbod8/default-website.git
-git clone git@github.com:hbod8/eatkelp.com.git
-
+# ensure docker is off to ensure there is no port collision with certbot
+docker-compose down --remove-orphans
+# update SSL certs
+certbot \
+  certonly\
+  --standalone\
+  --expand\
+  -n\
+  -d harry.technology\
+  -d www.harry.technology\
+  -d resume.harry.technology\
+  -d admin.harry.technology\
+  -d prestorecording.com\
+  -d www.prestorecording.com\
+  -d harrysaliba.com\
+  -d www.harrysaliba.com\
+  -d resume.harrysaliba.com\
+  -d apsaliba.com\
+  -d www.apsaliba.com\
+  -d sahleebah.com\
+  -d www.sahleebah.com\
+  -d lizsaliba.com\
+  -d www.lizsaliba.com\
+  -d eatkelp.com\
+  -d www.eatkelp.com\
+  -d saliba.family\
+  -d www.saliba.family
+cp -r /etc/letsencrypt/live/harry.technology/ ./certs
+# pull from repo
+git pull
 # build
-mkdir content
-
-cd simplestats-ui
-npm install
-ng build
-cp dist/simplestats-ui ../content
-cd ..
-
-cd simplestats-api
-npm install
-cd ..
-
-cd angular-resume
-npm install
-cd ..
-
-cd simplestats-ui
-npm install
-cd ..
+docker-compose build
+# run
+docker-compose up -d
